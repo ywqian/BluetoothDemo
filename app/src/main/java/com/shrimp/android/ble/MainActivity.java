@@ -76,6 +76,11 @@ public class MainActivity extends AppCompatActivity implements BluetoothReceiver
         });
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(receiver);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
